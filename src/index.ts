@@ -7,7 +7,11 @@ import authRoutes from "./routes/auth.routes";
 const app = express();
 dotenv.config();
 
-app.use(cors());
+app.use(cors({
+   origin: "*", // ou o domínio do seu front
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
 const prisma = new PrismaClient();
