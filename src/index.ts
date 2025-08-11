@@ -17,7 +17,7 @@ app.use(express.json());
 const prisma = new PrismaClient();
 
 
-app.use("/api/auth", authRoutes);
+app.use("", authRoutes);
 app.get("/", (req, res) => {
   res.send("API funcionando 🚀");
 });
